@@ -18,6 +18,7 @@ public class Principal5 extends javax.swing.JFrame {
     /**
      * Creates new form Principal5
      */
+    Cuenta c;
     
    
     public Principal5() {
@@ -50,8 +51,8 @@ public class Principal5 extends javax.swing.JFrame {
         cmdRetirar = new javax.swing.JButton();
         cmdIngresa = new javax.swing.JButton();
         cmdBorrar = new javax.swing.JButton();
-        cmdMostrar = new javax.swing.JButton();
         cmdActusald = new javax.swing.JButton();
+        cmdMostrar = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         txtSald = new javax.swing.JTextField();
         jPanel3 = new javax.swing.JPanel();
@@ -67,13 +68,18 @@ public class Principal5 extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Malgun Gothic", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(102, 0, 102));
-        jLabel1.setText("CUENTA");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 10, -1, -1));
+        jLabel1.setText("CUENTA BANCARIA");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 10, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("DialogInput", 1, 14)); // NOI18N
         jLabel2.setText("No. de Indentificación:");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, -1, -1));
 
+        txtNidentf.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNidentfActionPerformed(evt);
+            }
+        });
         txtNidentf.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtNidentfKeyTyped(evt);
@@ -98,13 +104,13 @@ public class Principal5 extends javax.swing.JFrame {
 
         cmdGuardar.setBackground(new java.awt.Color(255, 255, 153));
         cmdGuardar.setFont(new java.awt.Font("Malgun Gothic", 1, 14)); // NOI18N
-        cmdGuardar.setText("Guardar");
+        cmdGuardar.setText("Crear cuenta");
         cmdGuardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmdGuardarActionPerformed(evt);
             }
         });
-        jPanel2.add(cmdGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 110, -1));
+        jPanel2.add(cmdGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 120, -1));
 
         cmdRetirar.setBackground(new java.awt.Color(255, 255, 153));
         cmdRetirar.setFont(new java.awt.Font("Malgun Gothic", 1, 14)); // NOI18N
@@ -114,12 +120,17 @@ public class Principal5 extends javax.swing.JFrame {
                 cmdRetirarActionPerformed(evt);
             }
         });
-        jPanel2.add(cmdRetirar, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, 90, 30));
+        jPanel2.add(cmdRetirar, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, 90, 30));
 
         cmdIngresa.setBackground(new java.awt.Color(255, 255, 153));
         cmdIngresa.setFont(new java.awt.Font("Malgun Gothic", 1, 14)); // NOI18N
         cmdIngresa.setText("Ingresar");
-        jPanel2.add(cmdIngresa, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 150, 90, 30));
+        cmdIngresa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmdIngresaActionPerformed(evt);
+            }
+        });
+        jPanel2.add(cmdIngresa, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, 90, 30));
 
         cmdBorrar.setBackground(new java.awt.Color(255, 255, 153));
         cmdBorrar.setFont(new java.awt.Font("Malgun Gothic", 1, 14)); // NOI18N
@@ -131,6 +142,15 @@ public class Principal5 extends javax.swing.JFrame {
         });
         jPanel2.add(cmdBorrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 230, 90, -1));
 
+        cmdActusald.setFont(new java.awt.Font("Malgun Gothic", 1, 14)); // NOI18N
+        cmdActusald.setText("Actualizar saldo");
+        cmdActusald.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmdActusaldActionPerformed(evt);
+            }
+        });
+        jPanel2.add(cmdActusald, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, 150, 30));
+
         cmdMostrar.setBackground(new java.awt.Color(255, 255, 153));
         cmdMostrar.setFont(new java.awt.Font("Malgun Gothic", 1, 14)); // NOI18N
         cmdMostrar.setText("Mostrar");
@@ -139,16 +159,7 @@ public class Principal5 extends javax.swing.JFrame {
                 cmdMostrarActionPerformed(evt);
             }
         });
-        jPanel2.add(cmdMostrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 110, 30));
-
-        cmdActusald.setFont(new java.awt.Font("Malgun Gothic", 1, 14)); // NOI18N
-        cmdActusald.setText("Actualizar saldo");
-        cmdActusald.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cmdActusaldActionPerformed(evt);
-            }
-        });
-        jPanel2.add(cmdActusald, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, 150, 30));
+        jPanel2.add(cmdMostrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 190, 110, 30));
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 80, 180, 280));
 
@@ -196,17 +207,16 @@ public class Principal5 extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 466, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 466, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
-        setSize(new java.awt.Dimension(589, 482));
+        setSize(new java.awt.Dimension(589, 504));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void cmdMostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdMostrarActionPerformed
-       Cuenta ct,ms;
-       String mt;
-       int nidentf,ncuent;
+       String aux;
+       long nidentf,ncuent;
        double sald,intr;
        
        if (txtNidentf.getText().trim().isEmpty()){
@@ -222,18 +232,14 @@ public class Principal5 extends javax.swing.JFrame {
          JOptionPane.showMessageDialog(this,"Digite el interes que aplicara","Error",JOptionPane.ERROR_MESSAGE);
          txtInteres.requestFocusInWindow();
        }else{
-         nidentf=Integer.parseInt(txtNidentf.getText());
-         ncuent=Integer.parseInt(txtNCuent.getText());
+         nidentf=Long.parseLong(txtNidentf.getText());
+         ncuent=Long.parseLong(txtNCuent.getText());
          sald=Double.parseDouble(txtSald.getText());
          intr=Double.parseDouble (txtInteres.getText());
          
-         ct=new Cuenta (nidentf,sald,intr,ncuent);
-          ms=ct.mostrar();
-          mt="No. Identificacion: "+ct.getNidentf()+ "\n" +"No. de la cuenta: "+ct.getNcuenta()+"\n"
-             + "Saldo actual: "+ct.getSaldact()+ "Interes: " +ct.getIntanual();
-          txtRes.setText(mt);
-                  
-         
+         aux=c.mostrar();
+         JOptionPane.showMessageDialog(this, aux);
+         txtRes.setText(""+aux);
        }
        
     }//GEN-LAST:event_cmdMostrarActionPerformed
@@ -250,8 +256,8 @@ public class Principal5 extends javax.swing.JFrame {
     }//GEN-LAST:event_cmdBorrarActionPerformed
 
     private void cmdGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdGuardarActionPerformed
-         Cuenta ct;
-       int nidentf,ncuent;
+       
+       long nidentf,ncuent;
        double sald,intr;
        
        if (txtNidentf.getText().trim().isEmpty()){
@@ -267,13 +273,14 @@ public class Principal5 extends javax.swing.JFrame {
          JOptionPane.showMessageDialog(this,"Digite el interes que aplicara","Error",JOptionPane.ERROR_MESSAGE);
          txtInteres.requestFocusInWindow();
        }else{
-         nidentf=Integer.parseInt(txtNidentf.getText());
-         ncuent=Integer.parseInt(txtNCuent.getText());
+         nidentf=Long.parseLong(txtNidentf.getText());
+         ncuent=Long.parseLong(txtNCuent.getText());
          sald=Double.parseDouble(txtSald.getText());
          intr=Double.parseDouble (txtInteres.getText());
           
-         ct = new Cuenta (nidentf,sald,intr,ncuent);
+         c = new Cuenta (nidentf,sald,ncuent);
          JOptionPane.showMessageDialog(this, "Su informacion se ha guardado correctamente");
+         
          
        }
     }//GEN-LAST:event_cmdGuardarActionPerformed
@@ -303,27 +310,22 @@ public class Principal5 extends javax.swing.JFrame {
     }//GEN-LAST:event_txtSaldKeyTyped
 
     private void cmdRetirarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdRetirarActionPerformed
-       Cuenta r,sald;
-       int nident,ncuent,rs;
-       double saldo, intr,ns,cntar=0;
+     double egreso,saldo;
+       int rs;
        
        rs=JOptionPane.showConfirmDialog(this, "Seguro que desea retirar dinero?","Pregunta",JOptionPane.YES_NO_OPTION);
        if (rs==JOptionPane.YES_OPTION){
-       nident=Integer.parseInt(txtNidentf.getText());
-       ncuent=Integer.parseInt(txtNCuent.getText());
        saldo=Double.parseDouble(txtSald.getText());
-       intr=Double.parseDouble(txtInteres.getText());
-       r= new Cuenta (nident,saldo,intr,ncuent);
-       ns=r.retirar(cntar);
-       JOptionPane.showMessageDialog(this,"Retiro exitso!");
-       txtSald.setText("" +ns);
-       txtRes.setText("");
+       egreso=Double.parseDouble(JOptionPane.showInputDialog(this,"Digite la cantidad de dinero que desea retirar"));
+         if (egreso>saldo){
+        JOptionPane.showMessageDialog(this, "No posee esta cantidad de dinero en su cuenta");
+         }else{
+         c.retirar(egreso);
+       JOptionPane.showMessageDialog(this,"Retiro exitso!");   
+         } 
+       txtSald.setText(""+c.getSaldact());
        }
-       
-       
-      
-       
-       
+ 
        
     }//GEN-LAST:event_cmdRetirarActionPerformed
 
@@ -339,26 +341,55 @@ public class Principal5 extends javax.swing.JFrame {
     }//GEN-LAST:event_txtInteresKeyTyped
 
     private void cmdActusaldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdActusaldActionPerformed
-        Cuenta sald,rs;
-        int nident,ncuent,res;
-        double inter,saldf,ns;
-        
-        res = JOptionPane.showConfirmDialog(this, "Desea actualizar su saldo?","Pregunta",JOptionPane.YES_NO_OPTION);
-         if (res==JOptionPane.YES_OPTION){
-       nident=Integer.parseInt(txtNidentf.getText());
-       ncuent=Integer.parseInt(txtNCuent.getText());
-       saldf=Double.parseDouble(txtSald.getText());
-       inter=Double.parseDouble(txtInteres.getText());
-      
-       rs=new Cuenta (nident,saldf,inter,nident);
-       ns=rs.actsaldo();
-       rs.setSaldact(ns);
-       JOptionPane.showMessageDialog(this, "Se ha guardado nuevo saldo");
-       txtSald.setText("" +ns);
-       txtRes.setText("");
-
+        long nident,ncuent;
+        double inter,saldf;
+        int auxp;
+         if (txtNidentf.getText().trim().isEmpty()){
+           JOptionPane.showMessageDialog(this,"Digite su numero de identificacion","Error",JOptionPane.ERROR_MESSAGE);
+           txtNidentf.requestFocusInWindow();
+       }else if(txtNCuent.getText().trim().isEmpty()){
+         JOptionPane.showMessageDialog(this, "Digite su numero de cuenta","Error",JOptionPane.ERROR_MESSAGE);
+         txtNCuent.requestFocusInWindow();
+       }else if (txtSald.getText().trim().isEmpty()){
+           JOptionPane.showMessageDialog(this,"Digite su saldo inicial","Error",JOptionPane.ERROR_MESSAGE);
+           txtSald.requestFocusInWindow();
+       }else if (txtInteres.getText().trim().isEmpty()){
+         JOptionPane.showMessageDialog(this,"Digite el interes que aplicara","Error",JOptionPane.ERROR_MESSAGE);
+         txtInteres.requestFocusInWindow();
+       }else{
+         auxp= JOptionPane.showConfirmDialog(this, "Desea actualizar su saldo?","Pregunta",JOptionPane.YES_NO_OPTION);
+         if (auxp == JOptionPane.YES_OPTION){
+           nident=Long.parseLong(txtNidentf.getText());
+           ncuent=Long.parseLong(txtNCuent.getText());
+           saldf=Double.parseDouble(txtSald.getText());
+           inter=Double.parseDouble(txtInteres.getText());
+           c.retirar(inter);
+           
+           txtSald.setText(""+c.getSaldact());
+         }else{
+             
          }
+       }
     }//GEN-LAST:event_cmdActusaldActionPerformed
+
+    private void txtNidentfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNidentfActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNidentfActionPerformed
+
+    private void cmdIngresaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdIngresaActionPerformed
+        
+       double ingreso;
+       int rsp;
+       
+       rsp=JOptionPane.showConfirmDialog(this, "Seguro que desea ingresar dinero?","Pregunta",JOptionPane.YES_NO_OPTION);
+       if (rsp==JOptionPane.YES_OPTION){
+       ingreso=Double.parseDouble(JOptionPane.showInputDialog(this,"Digite la cantidad de dinero que va a ingresar"));
+       c.ingresar(ingreso);
+       JOptionPane.showMessageDialog(this,"Retiro exitso!");
+       
+       txtSald.setText(""+c.getSaldact());
+       }
+    }//GEN-LAST:event_cmdIngresaActionPerformed
 
     /**
      * @param args the command line arguments

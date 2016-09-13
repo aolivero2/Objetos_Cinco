@@ -1,3 +1,4 @@
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -12,19 +13,22 @@ import javax.swing.JOptionPane;
  * @author SERVIDOR
  */
 public class Cuenta {
-   private int nidentf;
+   private long nidentf;
    private double saldact;
-   private double intanual;
-   private int ncuenta;
-   
-   public Cuenta (int nidentf, double saldact, double intanual, int ncuenta){
-       this.nidentf=nidentf;
-       this.saldact=saldact;
-       this.intanual=intanual;
-       this.ncuenta=ncuenta;
-   }
+   private long ncuenta;
 
-    public int getNidentf() {
+    public Cuenta(long nidentf, double saldact, long ncuenta) {
+        this.nidentf = nidentf;
+        this.saldact = saldact;
+        this.ncuenta = ncuenta;
+    }
+    public Cuenta (long ncuenta,long nidentf){
+        this.ncuenta=ncuenta;
+        this.nidentf=nidentf;
+        this.saldact=0;
+    }
+
+    public long getNidentf() {
         return nidentf;
     }
 
@@ -32,15 +36,11 @@ public class Cuenta {
         return saldact;
     }
 
-    public double getIntanual() {
-        return intanual;
-    }
-
-    public int getNcuenta() {
+    public long getNcuenta() {
         return ncuenta;
     }
 
-    public void setNidentf(int nidentf) {
+    public void setNidentf(long nidentf) {
         this.nidentf = nidentf;
     }
 
@@ -48,51 +48,30 @@ public class Cuenta {
         this.saldact = saldact;
     }
 
-    public void setIntanual(double intanual) {
-        this.intanual = intanual;
-    }
-
-    public void setNcuenta(int ncuenta) {
+    public void setNcuenta(long ncuenta) {
         this.ncuenta = ncuenta;
     }
-
-    public double actsaldo (){
-        double intd,totl,op;
-        intd=(this.intanual/365);
-        op=(this.saldact*intd)/100;
-        this.saldact=this.saldact-op;
-        totl=this.saldact;
-        return totl;
-    }
-    public double ingresar (double cantn){
-        double op;
-        if (cantn<=0){
-            op=0;
-        }else{
-            this.saldact=this.saldact+cantn;
-            op=this.saldact;
-        }
-        return op;
-    }
-    public double retirar (double cntar){
-        double sald;
-         if (cntar<this.saldact){
-            JOptionPane.showMessageDialog(null, "No posee esta cantidad en su cuenta");
-            sald=this.saldact;
-         }else{
-            sald=this.saldact-cntar;
-         }
-         return sald;
-    }
-    public Cuenta mostrar (){
-       Cuenta m;
-        int ni,nc;
-        double sald,inta;
-        ni=this.nidentf;
-        sald=this.saldact;
-        inta=this.intanual;
-        nc=this.ncuenta;
-        m = new Cuenta (ni,sald,inta,nc);
-        return m;
-    }
+   public void actualizarsald (double inan){
+      double aux,aux2;
+      aux=this.getSaldact()*(inan/365);
+      aux2=this.getSaldact()+aux;
+      this.setSaldact(aux2);
+   }
+   public void ingresar (double ingreso){
+       double aux;
+       aux=this.getSaldact()+ingreso;
+       this.setSaldact(aux);
+   }
+   public void retirar (double egreso){
+       double aux;
+       aux=this.getSaldact()-egreso;
+       this.setSaldact(aux);
+   }
+   public String mostrar (){
+       String aux;
+        aux= "No. de la cuenta es: "+this.getNcuenta()+"\n"
+        + "No. de identificacion es: "+this.getNidentf()+"\n"
+        + "Saldo actual es: "+this.getSaldact();
+      return aux;
+   }
 }
