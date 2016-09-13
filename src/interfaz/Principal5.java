@@ -304,10 +304,25 @@ public class Principal5 extends javax.swing.JFrame {
 
     private void cmdRetirarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdRetirarActionPerformed
        Cuenta r,sald;
-       int nident,ncuent;
-       double saldo, intr,ns;
+       int nident,ncuent,rs;
+       double saldo, intr,ns,cntar=0;
        
-    
+       rs=JOptionPane.showConfirmDialog(this, "Seguro que desea retirar dinero?","Pregunta",JOptionPane.YES_NO_OPTION);
+       if (rs==JOptionPane.YES_OPTION){
+       nident=Integer.parseInt(txtNidentf.getText());
+       ncuent=Integer.parseInt(txtNCuent.getText());
+       saldo=Double.parseDouble(txtSald.getText());
+       intr=Double.parseDouble(txtInteres.getText());
+       r= new Cuenta (nident,saldo,intr,ncuent);
+       ns=r.retirar(cntar);
+       JOptionPane.showMessageDialog(this,"Retiro exitso!");
+       txtSald.setText("" +ns);
+       txtRes.setText("");
+       }
+       
+       
+      
+       
        
        
     }//GEN-LAST:event_cmdRetirarActionPerformed
@@ -326,7 +341,7 @@ public class Principal5 extends javax.swing.JFrame {
     private void cmdActusaldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdActusaldActionPerformed
         Cuenta sald,rs;
         int nident,ncuent,res;
-        double inter,aux,saldf,ns;
+        double inter,saldf,ns;
         
         res = JOptionPane.showConfirmDialog(this, "Desea actualizar su saldo?","Pregunta",JOptionPane.YES_NO_OPTION);
          if (res==JOptionPane.YES_OPTION){
