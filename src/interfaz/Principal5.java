@@ -23,12 +23,12 @@ public class Principal5 extends javax.swing.JFrame {
    
     public Principal5() {
         initComponents();
-        cmdActusald.setEnabled(true);
+        cmdActusald.setEnabled(false);
         cmdBorrar.setEnabled(true);
         cmdGuardar.setEnabled(true);
-        cmdMostrar.setEnabled(true);
-        cmdIngresa.setEnabled(true);
-        cmdRetirar.setEnabled(true);
+        cmdMostrar.setEnabled(false);
+        cmdIngresa.setEnabled(false);
+        cmdRetirar.setEnabled(false);
     }
 
     /**
@@ -63,16 +63,17 @@ public class Principal5 extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(204, 204, 255));
+        jPanel1.setBackground(new java.awt.Color(153, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Malgun Gothic", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(102, 0, 102));
+        jLabel1.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(153, 0, 153));
         jLabel1.setText("CUENTA BANCARIA");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 10, -1, -1));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 10, -1, -1));
 
-        jLabel2.setFont(new java.awt.Font("DialogInput", 1, 14)); // NOI18N
-        jLabel2.setText("No. de Indentificación:");
+        jLabel2.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 102, 102));
+        jLabel2.setText("No. de identificación:");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, -1, -1));
 
         txtNidentf.addActionListener(new java.awt.event.ActionListener() {
@@ -85,11 +86,12 @@ public class Principal5 extends javax.swing.JFrame {
                 txtNidentfKeyTyped(evt);
             }
         });
-        jPanel1.add(txtNidentf, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 70, 150, 30));
+        jPanel1.add(txtNidentf, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 70, 150, 30));
 
-        jLabel3.setFont(new java.awt.Font("DialogInput", 1, 14)); // NOI18N
-        jLabel3.setText("No. de la Cuenta:");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, -1, -1));
+        jLabel3.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(0, 102, 102));
+        jLabel3.setText("No. de la cuenta:");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, -1, -1));
 
         txtNCuent.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
@@ -102,7 +104,7 @@ public class Principal5 extends javax.swing.JFrame {
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Opciones:", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Century Gothic", 1, 14), new java.awt.Color(102, 0, 102))); // NOI18N
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        cmdGuardar.setBackground(new java.awt.Color(255, 255, 153));
+        cmdGuardar.setBackground(new java.awt.Color(255, 255, 102));
         cmdGuardar.setFont(new java.awt.Font("Malgun Gothic", 1, 14)); // NOI18N
         cmdGuardar.setText("Crear cuenta");
         cmdGuardar.addActionListener(new java.awt.event.ActionListener() {
@@ -112,7 +114,7 @@ public class Principal5 extends javax.swing.JFrame {
         });
         jPanel2.add(cmdGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 120, -1));
 
-        cmdRetirar.setBackground(new java.awt.Color(255, 255, 153));
+        cmdRetirar.setBackground(new java.awt.Color(255, 255, 102));
         cmdRetirar.setFont(new java.awt.Font("Malgun Gothic", 1, 14)); // NOI18N
         cmdRetirar.setText("Retirar");
         cmdRetirar.addActionListener(new java.awt.event.ActionListener() {
@@ -122,7 +124,7 @@ public class Principal5 extends javax.swing.JFrame {
         });
         jPanel2.add(cmdRetirar, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, 90, 30));
 
-        cmdIngresa.setBackground(new java.awt.Color(255, 255, 153));
+        cmdIngresa.setBackground(new java.awt.Color(255, 255, 102));
         cmdIngresa.setFont(new java.awt.Font("Malgun Gothic", 1, 14)); // NOI18N
         cmdIngresa.setText("Ingresar");
         cmdIngresa.addActionListener(new java.awt.event.ActionListener() {
@@ -132,7 +134,7 @@ public class Principal5 extends javax.swing.JFrame {
         });
         jPanel2.add(cmdIngresa, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, 90, 30));
 
-        cmdBorrar.setBackground(new java.awt.Color(255, 255, 153));
+        cmdBorrar.setBackground(new java.awt.Color(255, 255, 102));
         cmdBorrar.setFont(new java.awt.Font("Malgun Gothic", 1, 14)); // NOI18N
         cmdBorrar.setText("Borrar");
         cmdBorrar.addActionListener(new java.awt.event.ActionListener() {
@@ -142,6 +144,7 @@ public class Principal5 extends javax.swing.JFrame {
         });
         jPanel2.add(cmdBorrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 230, 90, -1));
 
+        cmdActusald.setBackground(new java.awt.Color(255, 255, 102));
         cmdActusald.setFont(new java.awt.Font("Malgun Gothic", 1, 14)); // NOI18N
         cmdActusald.setText("Actualizar saldo");
         cmdActusald.addActionListener(new java.awt.event.ActionListener() {
@@ -151,7 +154,7 @@ public class Principal5 extends javax.swing.JFrame {
         });
         jPanel2.add(cmdActusald, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, 150, 30));
 
-        cmdMostrar.setBackground(new java.awt.Color(255, 255, 153));
+        cmdMostrar.setBackground(new java.awt.Color(255, 255, 102));
         cmdMostrar.setFont(new java.awt.Font("Malgun Gothic", 1, 14)); // NOI18N
         cmdMostrar.setText("Mostrar");
         cmdMostrar.addActionListener(new java.awt.event.ActionListener() {
@@ -161,32 +164,38 @@ public class Principal5 extends javax.swing.JFrame {
         });
         jPanel2.add(cmdMostrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 190, 110, 30));
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 80, 180, 280));
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 110, 180, 290));
 
-        jLabel6.setFont(new java.awt.Font("DialogInput", 1, 14)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(0, 102, 102));
         jLabel6.setText("Saldo inicial:");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 160, -1, -1));
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 150, -1, -1));
 
         txtSald.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtSaldKeyTyped(evt);
             }
         });
-        jPanel1.add(txtSald, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 160, 140, 30));
+        jPanel1.add(txtSald, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 150, 140, 30));
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 204));
-        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Datos:", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Century Gothic", 1, 14), new java.awt.Color(102, 0, 102))); // NOI18N
+        jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 153, 153), 5));
+        jPanel3.setForeground(new java.awt.Color(255, 255, 255));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        txtRes.setEditable(false);
         txtRes.setColumns(20);
+        txtRes.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        txtRes.setForeground(new java.awt.Color(153, 0, 153));
         txtRes.setRows(5);
         jScrollPane1.setViewportView(txtRes);
 
-        jPanel3.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 270, 150));
+        jPanel3.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 270, 150));
 
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, 310, 190));
 
-        jLabel4.setFont(new java.awt.Font("DialogInput", 1, 14)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(0, 102, 102));
         jLabel4.setText("Interes:");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 200, -1, -1));
 
@@ -195,7 +204,7 @@ public class Principal5 extends javax.swing.JFrame {
                 txtInteresKeyTyped(evt);
             }
         });
-        jPanel1.add(txtInteres, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 200, 80, 30));
+        jPanel1.add(txtInteres, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 200, 80, 30));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -242,6 +251,12 @@ public class Principal5 extends javax.swing.JFrame {
          txtRes.setText(""+aux);
        }
        
+        cmdActusald.setEnabled(true);
+        cmdBorrar.setEnabled(true);
+        cmdGuardar.setEnabled(false);
+        cmdMostrar.setEnabled(true);
+        cmdIngresa.setEnabled(true);
+        cmdRetirar.setEnabled(true);
     }//GEN-LAST:event_cmdMostrarActionPerformed
 
     private void cmdBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdBorrarActionPerformed
@@ -252,6 +267,12 @@ public class Principal5 extends javax.swing.JFrame {
         txtSald.setText("");
         
         txtNidentf.requestFocusInWindow();
+        cmdActusald.setEnabled(false);
+        cmdBorrar.setEnabled(true);
+        cmdGuardar.setEnabled(true);
+        cmdMostrar.setEnabled(false);
+        cmdIngresa.setEnabled(false);
+        cmdRetirar.setEnabled(false);
         
     }//GEN-LAST:event_cmdBorrarActionPerformed
 
@@ -281,7 +302,12 @@ public class Principal5 extends javax.swing.JFrame {
          c = new Cuenta (nidentf,sald,ncuent);
          JOptionPane.showMessageDialog(this, "Su informacion se ha guardado correctamente");
          
-         
+        cmdActusald.setEnabled(true);
+        cmdBorrar.setEnabled(true);
+        cmdGuardar.setEnabled(false);
+        cmdMostrar.setEnabled(true);
+        cmdIngresa.setEnabled(true);
+        cmdRetirar.setEnabled(true);
        }
     }//GEN-LAST:event_cmdGuardarActionPerformed
 
@@ -321,11 +347,16 @@ public class Principal5 extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(this, "No posee esta cantidad de dinero en su cuenta");
          }else{
          c.retirar(egreso);
-       JOptionPane.showMessageDialog(this,"Retiro exitso!");   
+       JOptionPane.showMessageDialog(this,"Retiro exitoso!");   
          } 
        txtSald.setText(""+c.getSaldact());
        }
- 
+       cmdActusald.setEnabled(false);
+        cmdBorrar.setEnabled(true);
+        cmdGuardar.setEnabled(false);
+        cmdMostrar.setEnabled(true);
+        cmdIngresa.setEnabled(true);
+        cmdRetirar.setEnabled(true); 
        
     }//GEN-LAST:event_cmdRetirarActionPerformed
 
@@ -364,10 +395,15 @@ public class Principal5 extends javax.swing.JFrame {
            saldf=Double.parseDouble(txtSald.getText());
            inter=Double.parseDouble(txtInteres.getText());
            c.retirar(inter);
-           
+           JOptionPane.showMessageDialog(this,"Saldo actualizado existosamente!");
            txtSald.setText(""+c.getSaldact());
          }else{
-             
+        cmdActusald.setEnabled(false);
+        cmdBorrar.setEnabled(true);
+        cmdGuardar.setEnabled(false);
+        cmdMostrar.setEnabled(true);
+        cmdIngresa.setEnabled(true);
+        cmdRetirar.setEnabled(true);  
          }
        }
     }//GEN-LAST:event_cmdActusaldActionPerformed
@@ -385,9 +421,16 @@ public class Principal5 extends javax.swing.JFrame {
        if (rsp==JOptionPane.YES_OPTION){
        ingreso=Double.parseDouble(JOptionPane.showInputDialog(this,"Digite la cantidad de dinero que va a ingresar"));
        c.ingresar(ingreso);
-       JOptionPane.showMessageDialog(this,"Retiro exitso!");
+       JOptionPane.showMessageDialog(this,"Ingreso exitoso!");
        
        txtSald.setText(""+c.getSaldact());
+       }else{
+        cmdActusald.setEnabled(false);
+        cmdBorrar.setEnabled(true);
+        cmdGuardar.setEnabled(false);
+        cmdMostrar.setEnabled(true);
+        cmdIngresa.setEnabled(true);
+        cmdRetirar.setEnabled(true);  
        }
     }//GEN-LAST:event_cmdIngresaActionPerformed
 
